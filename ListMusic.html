@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Music 3D</title>
+    <link rel="stylesheet" href="ListMusic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <audio class="audio"></audio>
+        <div class="menuMusic">
+            <div class="albumImg">
+                <!-- <div class="album-icon"><i class="fa-brands fa-youtube"></i></div> -->
+                <div class="album">
+                    
+                </div>
+            </div>
+            <div class="singer">
+                <div class="singerName">
+                    <span>Đom Đóm</span>
+                    <p>Jack-J97</p>
+                </div>
+            </div>
+            <div class="linetime">
+                <div class="timeSet">
+                    <span class="timeStart">00:00</span>
+                    <span class="timeEnd">00:00</span>
+                </div>
+                <div class="line">
+                    <div class="time"></div>
+                </div>
+            </div>
+            <div class="buttonControl">
+                <div class="control">
+                    <div class="auto">
+                        <span class="tooltips">Bật phát ngẫu nhiên</span>
+                        <i id="random" style="color: white;" class="fa-solid fa-shuffle fa-lg" ></i>
+                    </div>
+                    <div><i id="skew" class="fa-solid fa-backward-step fa-lg" ></i></div>
+                    <div><i id="play" tabindex="0" class="fa-solid fa-play fa-xl"></i></div>
+                    <!-- <i id="pause" class="fa-solid fa-pause fa-lg"></i> -->
+                    <div><i id="next" class="fa-solid fa-forward-step fa-lg"></i></div>
+                    <div class="repeat">
+                        <span class="tooltips">Bật phát lại một bài</span>
+                        <i id="back" style="color: white;" class="fa-solid fa-repeat fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="musicList">
+            <div class="music">
+                <div class="media">
+                    <div class="musicImg">
+                        <img class="origin" src="Resoures/jack.jpg" >
+                        <div class="musicImg-icon"><img  src="Resoures/icon-playing.gif">
+                        </div>
+                    </div>
+                    <div class="media-title">
+                        <h3>Những Bài Hát Hay Nhất Của Jack - J97</h3>
+                        <span>Cập nhật: 21/02/2024</span>
+                        <a href="" target="_blank"><span class="title">Jack - J97</span></a>
+                        <span>1.2M người yêu thích</span>
+                    </div>
+                    <div class="action">
+                        <button class="bnt-action">
+                            <i id="play" class="fa-solid fa-play"></i>
+                            <span>PHÁT NGẪU NHIÊN</span>
+                        </button>
+                        <div >
+                            <span class="tooltips">Khác</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <h1>Trịnh Trần Phương Tuấn</h1>
+                    <p id="textArthur">Tạo bởi Nguyễn Cao </p>
+                    <div class="musicTitle">
+                        <div class="Title">
+                            <div><i class="fa-solid fa-music" style="color: #ffffff;"></i></div>
+                            <div class="TitleName"><span>BÀI HÁT</span></div>
+                        </div>
+                        <div>
+                            <span>ALBUM</span>
+                        </div>
+                        <div>
+                            <span>THỜI GIAN</span>
+                        </div>
+                    </div>
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="height: 100px;"></div>
+    </div>
+    <script src="ListMusic.js"></script>
+</body>
+</html>

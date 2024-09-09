@@ -1,0 +1,552 @@
+*{
+    cursor:default ;
+}
+html{
+    font-size: 100%;
+}
+body{
+    outline: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0.2)),url(Resoures/img.jpg) no-repeat center/cover
+}
+.container{
+    /* background-color: rgb(20, 134, 235); */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.container .menuMusic{
+    /* background-color: aquamarine; */
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ablum Img */
+
+.menuMusic .albumImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menuMusic .albumImg .album{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+.menuMusic .albumImg .album .album-img{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    /* width: 13.4%; */
+    width: 183.5px;
+    margin: 0 5px 0 5px ;
+}
+.menuMusic .albumImg .album .album-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+    transition: opacity ease-in 0.2s;
+}
+.menuMusic .albumImg .album-icon{
+    width: 4%;
+    transform: translateY(100px);
+}
+.menuMusic .albumImg .album .album-img .album-img__remove{
+    position: absolute;
+    right: -5px;
+    top: -8px;
+    color: aliceblue;
+    z-index: 2;
+    transition: opacity ease-in 0.2s;
+    opacity: 0;
+}
+.menuMusic .albumImg .album .album-img .album-img__remove .fa-solid{
+    cursor: pointer;
+}
+.menuMusic .albumImg .album .album-img:hover img{
+    opacity: .6;
+}
+.menuMusic .albumImg .album .album-img:hover .album-img__remove{
+    opacity: 1;
+}
+/* SingerName  */
+.menuMusic .singer .singerName{
+    padding: 15px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: pink;
+}
+.menuMusic .singer .singerName span{
+    font-size: 1.3rem;
+}
+.menuMusic .singer .singerName P{
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* TimeMusic */
+.menuMusic .linetime{
+    /* padding: px 0; */
+    margin: 5px 0;
+}
+.menuMusic .linetime .line{
+    background-color: rgb(158, 152, 152);
+    margin: 2px 0;
+    border-radius: 5px;
+    height: 5px;
+    width: 300px;
+    cursor: pointer;
+}
+.menuMusic .linetime .line .time{
+    position: relative;
+    background-color:pink;
+    border-radius: 5px;
+    height: 5px;
+    width: 0px;
+    max-width: 300px;
+    cursor: pointer;
+}
+.menuMusic .linetime .line .time::after{
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: -2px;
+    right: -5px;
+    border-radius: 50%;
+    background-color: pink;
+}
+.menuMusic .linetime .timeSet{
+    font-size: 0.75rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.menuMusic .linetime .timeSet .timeStart{
+    opacity: .5;
+}
+
+/* Control  */
+.menuMusic .buttonControl{
+    padding: 25px 0px;
+}
+.menuMusic .buttonControl .control {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.menuMusic .buttonControl .control .fa-shuffle:before{
+    font-size: 1rem;
+}
+.menuMusic .buttonControl .control .fa-repeat:before{
+    font-size: 1rem;
+}
+.menuMusic .buttonControl .control i{
+    cursor: pointer;
+}
+.menuMusic .buttonControl .control #skew{
+    transform: translateX(25px);
+}
+.menuMusic .buttonControl .control #next{
+    transform: translateX(-25px);
+}
+.menuMusic .buttonControl .control #back{
+    transform: translateX(-5px);
+}
+.menuMusic .buttonControl .control #back{
+    transform: translateY(-1px);
+}
+.menuMusic .buttonControl .control #random{
+    transform: translateX(5px);
+}
+.menuMusic .buttonControl .control #skew::before,
+.menuMusic .buttonControl .control #next::before
+{
+    padding: 5px 9px;
+    border-radius: 50%;
+}
+.menuMusic .buttonControl .control #play::before{
+    padding: 5px 10px;
+    border: 1.2px solid white;
+    border-radius: 50%;
+    font-size: 1.7rem;
+}
+.menuMusic .buttonControl .control #skew:hover:before,
+.menuMusic .buttonControl .control #next:hover:before{
+    background-color: rgba(121, 118, 118, 0.25);
+}
+.menuMusic .buttonControl .control #play:hover{
+    color: #c273ed;
+}
+.menuMusic .buttonControl .control #play:hover::before {
+    border-color: #c273ed;
+}
+/* ListMusic */
+
+.container .musicList{
+    /* background-color: aqua; */
+    margin-top: 20px;
+}
+.musicList .music{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 0 60px;
+}
+@media(max-width:900px){
+    .musicList .music{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 60px 0 0 0;
+    }
+}
+.musicList .music .media{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    align-items: center;
+    min-width: 261.87px;
+}
+.musicList .music .media .musicImg{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    min-width: 261.87px;
+    position: relative;
+
+}
+.musicList .music .media .musicImg .origin{
+    position: relative;
+}
+.musicList .music .media .musicImg .musicImg-icon{
+    width: 7%;
+    height: 7%;
+    position: absolute;
+    left: 42%;
+    top:42%;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 50px;
+    display: none;
+}
+.musicList .music .media .musicImg .musicImg-icon img{
+    width: 100%;
+    width: 100%;
+}
+.musicList .music .media .media-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+.musicList .music .media .media-title h3{
+    line-height: 1.5;
+    margin-block-start:0 ;
+    margin-block-end:0 ;
+    text-align: center;
+}
+.musicList .music .media .media-title a,
+.musicList .music .media .media-title span{
+    text-decoration: none;
+    color: rgb(170, 169, 169);
+    font-size: 0.7rem;
+}
+.musicList .music .media .media-title a:hover{
+    color: rgb(144, 101, 176);
+    text-decoration: underline;
+}
+.musicList .music .media .media-title .title:hover{
+    color: rgb(144, 101, 176);
+    text-decoration: underline;
+}
+.musicList .music .media .media-title span{
+    padding: 3px;
+}
+.musicList .music .media .action{
+    margin-top:15px ;
+}
+.musicList .music .media .action .bnt-action,
+.musicList .music .media .action .bnt-action span,
+.musicList .music .media .action .bnt-action i{
+    cursor: pointer;
+}
+.musicList .music .media .action .bnt-action{
+    background-color: #9b4de0;
+    border: none;
+    color: white;
+    padding: 9px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.musicList .music .media .action .bnt-action:hover{
+    opacity: 0.9;
+}
+.musicList .music .musicImg .origin{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: transform ease-out 0.4s;
+}
+.musicList .music .musicImg h3{
+    font-size: 1rem;
+
+}
+.musicList .music .musicImg .origin:hover{
+    transform: scale(1.1);
+}
+.musicList .music .list{
+    width: 800px;
+}
+
+.musicList .music .list ul{
+    max-height: 280px;
+    overflow-y: scroll;
+    position: relative;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+/* .musicList .music .list{
+    width: 60%;
+} */
+.musicList .music .list h1{
+    padding-top: 10px;
+}
+.musicList .music .list h1,.musicList .music .list #textArthur{
+    position: relative;
+    left: 50px;
+    margin: 0;
+}
+.musicList .music .list #textArthur{
+    color: rgb(170, 169, 169);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+.musicList .music .list .musicTitle{
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: rgb(170, 169, 169);
+    margin-left: 50px;
+    padding: 0 15px 10px 10px;
+    border-bottom: 1px solid rgb(173, 168, 168,0.2);
+    border-radius: 3px;
+}
+.musicList .music .list .musicTitle .Title{
+    display: flex;
+}
+.musicList .music .list .musicTitle .Title .TitleName{
+    padding-left: 15px;
+}
+.musicList .music .list ul{
+    display: flex;
+    /* padding-top: 20px; */
+    flex-direction: column;
+    margin-block-start: 0;
+    position: relative;
+    z-index: 10;
+}
+.musicList .music .list ul li{
+    display:flex;
+    list-style: none;
+    position: relative;
+    border-bottom: 1px solid rgb(173, 168, 168,0.2);
+    border-radius: 3px;
+    padding: 7px 7px 7px 10px;
+    margin: 0px 0px 0px 10px;
+    align-items: center;
+}
+.musicList .music .list ul li .listImg{
+    display: flex;
+    overflow: hidden;
+    width: 5.4%;
+    min-width:37.72px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.musicList .music .list ul li .listImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    transition: transform ease-out 0.4s;
+}
+.musicList .music .list ul li .listImg img:hover{
+    transform: scale(1.1);
+}
+.musicList .music .list ul li .listName{
+    padding-left:7px ;
+}
+.musicList .music .list ul li .listName span{
+    font-size: 0.95rem;
+}
+.musicList .music .list ul li .listName a{
+    text-decoration: none;
+    color: rgb(170, 169, 169);
+}
+.musicList .music .list ul li .listName p{
+    margin: 0;
+    font-size: 0.7rem;
+}
+.active{
+    background-color: rgba(117, 116, 116, 0.6);
+}
+.activeTextColor{
+    color: white;
+}
+.musicList .music .list ul li .listName .activeTextColor:hover{
+    text-decoration: underline;
+}
+.musicList .music .list ul li .li-icon{
+    position: absolute;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.musicList .music .list ul li .li-icon .diffirent-icon{
+    display: flex;
+    justify-content: center;
+    margin-left: 3px;
+}
+.musicList .music .list ul li .li-icon .diffirent-icon:hover{
+    color: rgb(202, 202, 202);
+}
+.musicList .music .list ul li .li-icon .add-icon{
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+.musicList .music .list ul li .li-icon .add-icon:hover{
+    color: rgb(202, 202, 202);
+}
+.musicList .music .list ul li .li-icon .add-icon #icon{
+    cursor: pointer;
+    position: relative;
+    padding: 8px 7px;
+    border-radius: 50%;
+}
+.musicList .music .list ul li .li-icon .add-icon #icon:hover{
+    background-color: rgba(121, 118, 118, 0.25);
+}
+.musicList .music .list ul li .li-icon .diffirent-icon #icon{
+    cursor: pointer;
+    position: relative;
+    /* margin-left: 5px; */
+}
+.menuMusic .buttonControl .control .repeat,
+.menuMusic .buttonControl .control .auto{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuMusic .buttonControl .control .repeat:hover .tooltips {
+    top: -38px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.menuMusic .buttonControl .control .auto:hover .tooltips {
+    top: -38px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.musicList .music .list ul li .li-icon .add-icon:hover .tooltips{
+    top: -25px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.tooltips{
+    position: absolute;
+    text-wrap: nowrap;
+    font-size: 0.6rem;
+    background-color:#313030;
+    color: #fff;
+    top: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 100;
+}
+.tooltips::before{
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #313030;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 100;
+}
+.musicList .music .list ul li .diffirent-icon:hover .tooltips{
+    top: -25px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.musicList .music .list ul li .Album-singer{
+    font-size: 0.7rem;
+    color: rgb(170, 169, 169);
+    position: absolute;
+    left: 48.2%;
+    cursor: pointer;
+}
+.musicList .music .list ul li .li-icon .fa-ellipsis:before{
+    font-size: 1rem;
+    padding: 8px 9.2px;
+    border-radius: 50%;
+}
+
+.musicList .music .list ul li .li-icon .fa-ellipsis:hover:before{
+    background-color: rgba(121, 118, 118, 0.25);
+}
+.musicList .music .list ul li:hover{
+    border-radius: 3px;
+    background-color: rgba(117, 116, 116, 0.4);
+}
+.musicList .music .list ul li .listName a:hover{
+    color: rgb(144, 101, 176);
+    text-decoration: underline;
+}
+/* .musicList .music .list ul li:hover .listName p{
+    color: white;
+} */
+.musicList .music .list ul li:hover .add-icon{
+    opacity: 1;
+}
+.musicList .music .list ul li .Album-singer:hover{
+    color: rgb(144, 101, 176);
+    text-decoration: underline;
+}
+.musicList .music .list ul li:hover .listImg img{
+    opacity: 0.8;
+} 
